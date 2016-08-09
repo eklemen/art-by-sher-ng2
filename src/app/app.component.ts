@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 import {AlertComponent, DATEPICKER_DIRECTIVES} from 'ng2-bootstrap/ng2-bootstrap';
+import { Hero } from './shared/hero';
 
 import { ApiService } from './shared';
 
@@ -19,7 +20,14 @@ import '../style/app.scss';
 })
 export class AppComponent {
   url = 'https://github.com/preboot/angular2-webpack';
+  heroes: Hero[];
   date: Date = new Date();
-  constructor(private api: ApiService) {
-  }
+  names: any;
+  ApiService: any;
+  errorMessage: any;
+  constructor(private api: ApiService) { }
+  // this.ApiService.getNames()
+  //   .subscribe(
+  //     names => this.names = names,
+  //     error =>  this.errorMessage = <any>error);
 }
