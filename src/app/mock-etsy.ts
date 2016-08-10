@@ -11,7 +11,6 @@ export const HEROES: Hero[] = [
   {id: 19, name: 'Magma'},
   {id: 20, name: 'Tornado'}
 ];
-
 // import { Listing } from './data-type';
 // export const LISTINGS: Listing[] = {
 //   "count": 1,

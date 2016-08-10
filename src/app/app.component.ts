@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
+import { OnInit } from '@angular/core';
 import {AlertComponent, DATEPICKER_DIRECTIVES} from 'ng2-bootstrap/ng2-bootstrap';
 import { Hero } from './shared/hero';
 
-import { ApiService } from './shared';
+import { ApiService } from './shared/api.service';
 
 import '../style/app.scss';
 
@@ -18,16 +19,21 @@ import '../style/app.scss';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   url = 'https://github.com/preboot/angular2-webpack';
   heroes: Hero[];
   date: Date = new Date();
-  names: any;
-  ApiService: any;
-  errorMessage: any;
   constructor(private api: ApiService) { }
   // this.ApiService.getNames()
   //   .subscribe(
   //     names => this.names = names,
   //     error =>  this.errorMessage = <any>error);
+  getHeroes() {
+    this.api.getHeroes().then(heroes => this.heroes = heroes);
+  }
+
+  ngOnInit(){
+    this.getHeroes();
+    console.log(this.getHeroes());
+  }
 }
