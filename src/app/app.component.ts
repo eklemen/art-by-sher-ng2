@@ -19,21 +19,20 @@ import '../style/app.scss';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit{
+export class AppComponent{
   url = 'https://github.com/preboot/angular2-webpack';
   heroes: Hero[];
   date: Date = new Date();
-  constructor(private api: ApiService) { }
-  // this.ApiService.getNames()
-  //   .subscribe(
-  //     names => this.names = names,
-  //     error =>  this.errorMessage = <any>error);
+  constructor(private api: ApiService) { 
+    this.api = api;
+  }
   getHeroes() {
-    this.api.getHeroes().then(heroes => this.heroes = heroes);
+    this.api.getHeroes()
+      .subscribe(heroes => {console.log(heroes); return this.heroes = heroes.results});
+      
   }
 
   ngOnInit(){
     this.getHeroes();
-    console.log(this.getHeroes());
   }
 }

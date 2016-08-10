@@ -14,21 +14,21 @@ export class ApiService {
     
   }
 
-  getHeroes() {
-    console.log(HEROES);
-    return Promise.resolve(HEROES);
-  }
-  // getNames() {
-  //   return HEROES;
-    // this.http.get('https://openapi.etsy.com/v2/public/shops/SherrysBeachArt/listings/active.js?api_key=pnclsngra8duf7qunhwsbfce')
-    // this.http.get('../mock-etsy.ts')
-    //   .map(res => res.json())
-    //   .subscribe(
-    //     data => this.names = data,
-    //     err => this.logError(err),
-    //     () => console.log('Success!')
-    //   );
+  // getHeroes() {
+  //   console.log(HEROES);
+  //   return Promise.resolve(HEROES);
   // }
+  getHeroes() {
+    // return HEROES;
+    return this.http.get('https://openapi.etsy.com/v2/public/shops/SherrysBeachArt/listings/active?api_key=pnclsngra8duf7qunhwsbfce')
+    // this.http.get('../mock-etsy.ts')
+      .map(res => res.json())
+      // .subscribe(
+      //   data => this.names = data,
+      //   err => this.logError(err),
+      //   () => console.log('Success!')
+      // );
+  }
   logError(err) {
     console.error('There was an error: ' + err);
   }
