@@ -1,11 +1,11 @@
 import { provideRouter, RouterConfig } from '@angular/router';
 
 import { HomeComponent } from './home';
-import { AboutComponent } from './about';
+import { ShopComponent } from './shop';
 
 export const routes: RouterConfig = [
   { path: '', component: HomeComponent },
-  { path: 'about', component: AboutComponent}
+  { path: 'shop', component: ShopComponent}
 ];
 
 export const APP_ROUTER_PROVIDERS = [

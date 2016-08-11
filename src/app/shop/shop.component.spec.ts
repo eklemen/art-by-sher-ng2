@@ -6,15 +6,15 @@ import {
 
 import { TestComponentBuilder } from '@angular/compiler/testing';
 
-import { AboutComponent } from './about.component';
+import { ShopComponent } from './shop.component';
 
-describe('About Component', () => {
+describe('Shop Component', () => {
   beforeEach(() => {
     addProviders([]);
   });
 
   it('should ...', async(inject([TestComponentBuilder], (tcb: TestComponentBuilder) => {
-    tcb.createAsync(AboutComponent).then((fixture) => {
+    tcb.createAsync(ShopComponent).then((fixture) => {
       fixture.detectChanges();
     });
   })));
