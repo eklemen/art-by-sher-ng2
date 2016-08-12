@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, Jsonp } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { Hero } from './hero';
 import { HEROES } from '../mock-etsy';
@@ -9,8 +9,8 @@ import { HEROES } from '../mock-etsy';
 export class ApiService {
   title = 'Angular 2';
   names: any;
-  // logError: any;
-  constructor(private http: Http){
+  key : string = 'api_key=pnclsngra8duf7qunhwsbfce';
+  constructor(private jsonp: Jsonp){
     
   }
 
@@ -20,14 +20,9 @@ export class ApiService {
   // }
   getHeroes() {
     // return HEROES;
-    return this.http.get('https://openapi.etsy.com/v2/public/shops/SherrysBeachArt/listings/active?api_key=pnclsngra8duf7qunhwsbfce')
-    // this.http.get('../mock-etsy.ts')
+    return this.jsonp.request(`https://openapi.etsy.com/v2/public/shops/SherrysBeachArt/listings/active.js?callback=JSONP_CALLBACK&${this.key}`)
+    // return this.http.get(`https://openapi.etsy.com/v2/public/shops/SherrysBeachArt/listings/active.js?${this.key}`)
       .map(res => res.json())
-      // .subscribe(
-      //   data => this.names = data,
-      //   err => this.logError(err),
-      //   () => console.log('Success!')
-      // );
   }
   logError(err) {
     console.error('There was an error: ' + err);
