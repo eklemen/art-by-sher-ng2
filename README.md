@@ -10,7 +10,7 @@ This project was seeded by the [Angular2-webpack repo](https://github.com/preboo
   - [x] Shop Page
   - [ ] Gallery
 - [x] Set up service to handle http calls
-  - [ ] Use JSONP to avoid CORS errors
+  - [x] Use JSONP to avoid CORS errors
 - [ ] Footer?
 - [ ] Email contact form
 - [ ] Responsive design from desktop to mobile
