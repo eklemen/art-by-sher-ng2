@@ -1,5 +1,6 @@
 // import { Hero } from './shared/hero.ts';
 // export const HEROES: Hero[] = [{
+//   {
 //   "count": 1,
 //   "results": [
 //     {
@@ -76,7 +77,27 @@
 //         "Wall Décor",
 //         "Wall Hangings"
 //       ],
-//       "used_manufacturer": false
+//       "used_manufacturer": false,
+//       "MainImage": {
+//         "listing_image_id": 917389165,
+//         "hex_code": null,
+//         "red": null,
+//         "green": null,
+//         "blue": null,
+//         "hue": null,
+//         "saturation": null,
+//         "brightness": null,
+//         "is_black_and_white": null,
+//         "creation_tsz": null,
+//         "listing_id": 267094583,
+//         "rank": null,
+//         "url_75x75": "https://img1.etsystatic.com/123/0/12227601/il_75x75.917389165_1v39.jpg",
+//         "url_170x135": "https://img1.etsystatic.com/123/0/12227601/il_170x135.917389165_1v39.jpg",
+//         "url_570xN": "https://img1.etsystatic.com/123/0/12227601/il_570xN.917389165_1v39.jpg",
+//         "url_fullxfull": "https://img1.etsystatic.com/123/0/12227601/il_fullxfull.917389165_1v39.jpg",
+//         "full_height": null,
+//         "full_width": null
+//       }
 //     }
 //   ],
 //   "params": {
@@ -105,4 +126,4 @@
 //     "next_page": null
 //   },
 //   "ok": true
-// }]
+// }

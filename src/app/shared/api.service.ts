@@ -19,7 +19,7 @@ export class ApiService {
   // }
   getListings() {
     // return HEROES;
-    return this.jsonp.request(`${this.baseUrl}/shops/SherrysBeachArt/listings/active.js?callback=JSONP_CALLBACK&${this.key}`, {method: 'Get'})
+    return this.jsonp.request(`${this.baseUrl}/shops/SherrysBeachArt/listings/active.js?callback=JSONP_CALLBACK&${this.key}&includes=MainImage`, {method: 'Get'})
       .map(res => res.json());
   }
   logError(err) {

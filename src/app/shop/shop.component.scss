@@ -1,3 +1,14 @@
 * {
   color: #f87c08;
 }
+
+.card{
+  // .card-img-top{
+  //   width: 160px;
+  // }
+  .card-block{
+    max-height: 200px;
+    overflow: auto;
+  }
+}
+
