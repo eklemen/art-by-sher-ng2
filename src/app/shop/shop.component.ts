@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Hero } from '../shared/hero';
+import { Listing } from '../shared/listing';
 import { Observable } from 'rxjs/Observable';
 import { ApiService } from '../shared/api.service';
 
@@ -10,19 +10,19 @@ import { ApiService } from '../shared/api.service';
   styleUrls: ['./shop.component.scss']
 })
 export class ShopComponent implements OnInit {
-  heroes: Observable<Hero[]>;
+  listings: Observable<Listing[]>;
   constructor(private api: ApiService) {
     // Do stuff
   }
 
-  getHeroes() {
-    this.api.getHeroes()
-      .subscribe(heroes => {console.log(heroes); return this.heroes = heroes.results});
+  getListings() {
+    this.api.getListings()
+      .subscribe(listings => {console.log(listings); return this.listings = listings.results});
       
   }
 
   ngOnInit() {
-    this.getHeroes();
+    this.getListings();
   }
 
 }

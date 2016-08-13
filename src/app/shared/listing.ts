@@ -1,4 +1,4 @@
-export class Hero {
+export class Listing {
   count: number;
   results: any[];
   params: {};
