@@ -2,19 +2,22 @@
   <h2>Shop</h2>
 
   <div class="row">
-    <div class="">
+    
       <div class="card col-sm-6 col-md-4 col-xl-3" *ngFor="let listing of listings">
+        
         <div class="img-container">
-          <img class="card-img-top" [src]="listing.MainImage.url_570xN" alt="Card image cap">
+          <img class="card-img-top" [src]="listing.MainImage.url_570xN" alt="{{listing.title}} thumbnail">
         </div>
+        
         <div class="card-block">
           <h4 class="card-title">{{listing.title}}</h4>
           <div class="item-links">
-            <a (click)="goToDetail(listing)" class="pull-xs-left">More Details</a>
-            <a [href]="listing.url" target="_blank" class="pull-xs-right">Buy</a>
+            <a (click)="goToDetail(listing)" class="card-link pull-xs-left">More Details</a>
+            <a [href]="listing.url" target="_blank" class="card-link pull-xs-right">Buy</a>
           </div>  
         </div>
+      
       </div> <!-- .card -->
-    </div> <!-- .col-x -->
+  
   </div> <!-- .row -->
 </div> <!-- .shop -->
