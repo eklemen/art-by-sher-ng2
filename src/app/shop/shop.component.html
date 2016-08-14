@@ -1,17 +1,20 @@
-<h2>Shop</h2>
-<alert type="info" *ngFor="let listing of listings">
-  <p>{{listing.title}}</p>
-</alert>
+<div class="shop">
+  <h2>Shop</h2>
 
-<div class="row">
-  <div class="col-sm-6 col-md-3">
-    <div class="card" *ngFor="let listing of listings">
-      <img class="card-img-top" [src]="listing.MainImage.url_170x135" alt="Card image cap">
-      <div class="card-block">
-        <h4 class="card-title">{{listing.title}}</h4>
-        <p class="card-text">{{listing.description}}</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div> <!-- .card -->
-  </div> <!-- .col-x -->
-</div> <!-- .row -->
+  <div class="row">
+    <div class="">
+      <div class="card col-sm-6 col-md-4 col-xl-3" *ngFor="let listing of listings">
+        <div class="img-container">
+          <img class="card-img-top" [src]="listing.MainImage.url_570xN" alt="Card image cap">
+        </div>
+        <div class="card-block">
+          <h4 class="card-title">{{listing.title}}</h4>
+          <div class="item-links">
+            <a (click)="goToDetail(listing)" class="pull-xs-left">More Details</a>
+            <a [href]="listing.url" target="_blank" class="pull-xs-right">Buy</a>
+          </div>  
+        </div>
+      </div> <!-- .card -->
+    </div> <!-- .col-x -->
+  </div> <!-- .row -->
+</div> <!-- .shop -->

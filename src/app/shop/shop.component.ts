@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Listing } from '../shared/listing';
+import { Listing, Item } from '../shared/listing';
 import { Observable } from 'rxjs/Observable';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { ApiService } from '../shared/api.service';
 
 @Component({
@@ -10,8 +11,10 @@ import { ApiService } from '../shared/api.service';
   styleUrls: ['./shop.component.scss']
 })
 export class ShopComponent implements OnInit {
-  listings: Observable<Listing[]>;
-  constructor(private api: ApiService) {
+  public listings: Observable<Listing[]>;
+  public item : Item;
+  // router: Router;
+  constructor(private api: ApiService, private router: Router) {
     // Do stuff
   }
 
@@ -19,6 +22,11 @@ export class ShopComponent implements OnInit {
     this.api.getListings()
       .subscribe(listings => {console.log(listings); return this.listings = listings.results});
       
+  }
+
+  goToDetail(item: Item){
+    let link = ['/shop', item.listing_id];
+    this.router.navigate(link);
   }
 
   ngOnInit() {

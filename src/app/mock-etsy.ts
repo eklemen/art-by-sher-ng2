@@ -1,5 +1,5 @@
-// import { Hero } from './shared/hero.ts';
-// export const HEROES: Hero[] = [{
+// import { Listing } from './shared/listing';
+// export const LISTINGS: Listing[] = [
 //   {
 //   "count": 1,
 //   "results": [
@@ -126,4 +126,4 @@
 //     "next_page": null
 //   },
 //   "ok": true
-// }
+// }]

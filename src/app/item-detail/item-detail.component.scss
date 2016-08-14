@@ -1,0 +1,15 @@
+*{
+  color: black;
+}
+:host{
+  .item-detail{
+    margin-top: 70px;
+    padding: 10px 2.5%;
+    a {
+      color: #03A9F4;
+      &:hover{
+        text-decoration: none;
+      }
+    }
+  }
+}

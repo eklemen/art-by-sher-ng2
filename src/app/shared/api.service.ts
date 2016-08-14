@@ -8,7 +8,9 @@ import { Listing } from './listing';
 export class ApiService {
   title = 'Angular 2';
   key : string = 'api_key=pnclsngra8duf7qunhwsbfce';
-  baseUrl: string = 'https://openapi.etsy.com/v2/public';
+  publicUrl: string = 'https://openapi.etsy.com/v2/public';
+  privateUrl: string = 'https://openapi.etsy.com/v2/private';
+  listingId: number;
   constructor(private jsonp: Jsonp){
     
   }
@@ -19,7 +21,12 @@ export class ApiService {
   // }
   getListings() {
     // return HEROES;
-    return this.jsonp.request(`${this.baseUrl}/shops/SherrysBeachArt/listings/active.js?callback=JSONP_CALLBACK&${this.key}&includes=MainImage`, {method: 'Get'})
+    return this.jsonp.request(`${this.publicUrl}/shops/SherrysBeachArt/listings/active.js?callback=JSONP_CALLBACK&${this.key}&includes=MainImage`, {method: 'Get'})
+      .map(res => res.json());
+  }
+
+  getSingleItem(listingId){
+    return this.jsonp.request(`${this.privateUrl}/listings/${listingId}.js?callback=JSONP_CALLBACK&${this.key}&includes=MainImage`, {method: 'Get'})
       .map(res => res.json());
   }
   logError(err) {
