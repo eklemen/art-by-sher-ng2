@@ -3,6 +3,7 @@ import { Listing, Item } from '../shared/listing';
 import { Observable } from 'rxjs/Observable';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { ApiService } from '../shared/api.service';
+import { LISTINGS } from '../mock-etsy.ts'; // Remove for prod, dont forget to get rid of mock-etsy file as well
 
 @Component({
   selector: 'abs-shop',
@@ -11,17 +12,24 @@ import { ApiService } from '../shared/api.service';
   styleUrls: ['./shop.component.scss']
 })
 export class ShopComponent implements OnInit {
-  public listings: Observable<Listing[]>;
+  // public listings: Observable<Listing[]>; // Uncomment for prod
   public item : Item;
-  // router: Router;
+  public listings: any[]; // Remove for prod
   constructor(private api: ApiService, private router: Router) {
     // Do stuff
   }
 
-  getListings() {
-    this.api.getListings()
-      .subscribe(listings => {console.log(listings); return this.listings = listings.results});
-      
+
+  // Uncomment for prod
+  // getListings() {
+  //   this.api.getListings()
+  //     .subscribe(listings => {console.log(listings); return this.listings = listings.results}); 
+  // }
+
+  // Remove getListings below in favor of the one above
+  getListings(){
+    this.listings = LISTINGS.results;
+    return this.listings;
   }
 
   goToDetail(item: Item){
